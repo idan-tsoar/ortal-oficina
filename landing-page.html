@@ -888,7 +888,7 @@
       <h4>צרו קשר</h4>
       <a href="tel:0506474030">📞 050-6474030</a>
       <a href="mailto:ortal@oficina.co.il">✉️ ortal@oficina.co.il</a>
-      <a href="https://wa.me/972506474030">💬 WhatsApp</a>
+      <a href="https://wa.me/972506474030?text=שלום%2C%20אני%20מעוניין%2Fת%20לשמוע%20על%20נכסים%20באזור%20השרון%20%28הגעתי%20דרך%20האתר%29">💬 WhatsApp</a>
       <a href="#">📍 הרצליה, ישראל</a>
     </div>
   </div>
@@ -910,17 +910,35 @@
   </svg>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  emailjs.init('pczCEgFBLahJbRNJQ');
+
   function submitForm(e) {
     e.preventDefault();
-    const form = document.getElementById('heroForm');
-    const thanks = document.getElementById('thank-you');
-    form.style.display = 'none';
-    thanks.style.display = 'block';
 
-    // In production: send to your CRM / email / WhatsApp API
-    // Example (replace with your endpoint):
-    // fetch('/api/leads', { method:'POST', body: JSON.stringify({...}) });
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '⏳ שולח...';
+    btn.disabled = true;
+
+    const templateParams = {
+      from_name: document.getElementById('name').value,
+      phone:     document.getElementById('phone').value,
+      interest:  document.getElementById('interest').value || 'לא צוין',
+      city:      document.getElementById('city').value     || 'לא צוין',
+    };
+
+    emailjs.send('service_t1bfmdk', 'template_2cqhguh', templateParams)
+      .then(() => {
+        document.getElementById('heroForm').style.display = 'none';
+        document.getElementById('thank-you').style.display = 'block';
+      })
+      .catch((err) => {
+        btn.textContent = '📞 השאירו פרטים – ייעוץ חינם';
+        btn.disabled = false;
+        alert('אירעה שגיאה בשליחה. נסו שוב או פנו ישירות בוואטסאפ.');
+        console.error('EmailJS error:', err);
+      });
   }
 
   // Smooth scroll for hash links
