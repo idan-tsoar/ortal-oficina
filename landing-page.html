@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>תיווך נדל"ן מסחרי ופרטי | השרון</title>
+  <meta name="description" content="מתווך נדל"ן מוביל באזור השרון – הרצליה, כפר סבא, רעננה, הוד השרון. מומחה לנדל"ן מסחרי ופרטי. צרו קשר לייעוץ חינם." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d2137;
+      --navy-light: #152d47;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --off-white: #f7f8fa;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --text: #1a1a2e;
+      --wa-green: #25D366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      background: var(--navy);
+      z-index: 100;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--white); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 60%, var(--navy-light) 100%);
+      min-height: 100vh;
+      padding: 100px 24px 60px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 .gold { color: var(--gold); }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+    .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .pill {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ─── LEAD FORM ─── */
+    .lead-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .lead-card h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .lead-card .sub {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--light-gray);
+      border-radius: 10px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--off-white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-primary {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, #b8922e 100%);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.2s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    h2.section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 50px;
+    }
+
+    /* ─── STATS ─── */
+    .stats-bar {
+      background: var(--gold);
+      padding: 40px 24px;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .stat-item .number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-item .label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    /* ─── SERVICES ─── */
+    .services-bg { background: var(--off-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 32px 28px;
+      border: 1.5px solid var(--light-gray);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(13,33,55,0.1);
+      border-color: var(--gold);
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.12);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .tag {
+      background: rgba(201,168,76,0.1);
+      color: #8a6a1e;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    /* ─── AREAS ─── */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .area-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .area-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 60px; height: 60px;
+      background: rgba(201,168,76,0.15);
+      border-radius: 50%;
+      transform: translate(20px, 20px);
+    }
+    .area-card .city {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .area-card .desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ─── WHY US ─── */
+    .why-bg { background: var(--off-white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 28px 20px;
+    }
+    .why-icon {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .why-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 28px;
+      border: 1.5px solid var(--light-gray);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.3;
+      font-family: serif;
+      line-height: 1;
+    }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 12px; }
+    .testimonial-card p {
+      font-size: 0.92rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 42px; height: 42px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .reviewer-info .name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+    .reviewer-info .role {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* ─── SECOND CTA ─── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-gold:hover { opacity: 0.9; }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060e18;
+      color: rgba(255,255,255,0.6);
+      padding: 50px 24px 30px;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .logo { font-size: 1.3rem; display: block; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.6; }
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      background: var(--wa-green);
+      color: var(--white);
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      z-index: 200;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+
+    /* ─── THANK YOU ─── */
+    #thank-you {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    #thank-you .check { font-size: 3rem; }
+    #thank-you h3 { color: var(--navy); font-size: 1.3rem; margin: 10px 0 6px; }
+    #thank-you p { color: var(--gray); font-size: 0.9rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<nav>
+  <div class="logo">ידן&nbsp;<span>נדל"ן</span></div>
+  <a class="nav-cta" href="#lead-form">השאירו פרטים ↓</a>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>מוצאים עבורכם את<br/><span class="gold">הנכס המושלם</span><br/>באזור השרון</h1>
+      <p>מתווך נדל"ן מסחרי ופרטי עם ניסיון מעמיק בשוק הרצליה, כפר סבא, רעננה והוד השרון. אנחנו לא רק מתווכים – אנחנו שותפים לדרך.</p>
+      <div class="trust-pills">
+        <span class="pill">🏢 נדל"ן מסחרי</span>
+        <span class="pill">🏠 נדל"ן פרטי</span>
+        <span class="pill">📍 אזור השרון</span>
+        <span class="pill">✅ ייעוץ חינם</span>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="lead-card" id="lead-form">
+      <h2>קבלו ייעוץ ראשוני חינם</h2>
+      <p class="sub">נחזור אליכם תוך שעה בימי עסקים</p>
+      <form id="heroForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">שם מלא *</label>
+            <input type="text" id="name" placeholder="ישראל ישראלי" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">טלפון *</label>
+            <input type="tel" id="phone" placeholder="05X-XXXXXXX" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interest">מה מעניין אתכם?</label>
+          <select id="interest">
+            <option value="">-- בחרו סוג נכס --</option>
+            <option>משרד להשכרה</option>
+            <option>חנות / מסחרי להשכרה</option>
+            <option>מחסן / תעשייה</option>
+            <option>נכס מסחרי לקנייה</option>
+            <option>דירה לקנייה</option>
+            <option>דירה להשכרה</option>
+            <option>השקעה בנדל"ן</option>
+            <option>אחר</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">עיר מועדפת</label>
+          <select id="city">
+            <option value="">-- בחרו עיר --</option>
+            <option>הרצליה</option>
+            <option>כפר סבא</option>
+            <option>רעננה</option>
+            <option>הוד השרון</option>
+            <option>פתח תקוה</option>
+            <option>כל האזור</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">📞 השאירו פרטים – ייעוץ חינם</button>
+        <p class="form-note">🔒 פרטיכם שמורים. ללא התחייבות.</p>
+      </form>
+      <div id="thank-you">
+        <div class="check">✅</div>
+        <h3>קיבלנו! נחזור אליכם בקרוב</h3>
+        <p>ניצור קשר תוך שעה בימי עסקים א'–ה'</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="number">+150</div>
+      <div class="label">עסקאות הושלמו</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">10+</div>
+      <div class="label">שנות ניסיון</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">5</div>
+      <div class="label">ערים באזור השרון</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">98%</div>
+      <div class="label">שביעות רצון לקוחות</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+<section class="services-bg">
+  <div class="container">
+    <div class="section-label">השירותים שלנו</div>
+    <h2 class="section-title">פתרונות נדל"ן מקיפים</h2>
+    <p class="section-desc">בין אם אתם מחפשים משרד לעסק שלכם, נכס להשקעה, או דירה למגורים – אנחנו כאן לכל צעד בדרך.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>משרדים להשכרה</h3>
+        <p>מגוון רחב של משרדים בגדלים שונים, מחללי עבודה גמישים ועד בנייני משרדים מלאים. בהתאמה לצרכי העסק שלכם.</p>
+        <div class="tag-list">
+          <span class="tag">20–2000 מ"ר</span>
+          <span class="tag">חדש ויד שנייה</span>
+          <span class="tag">חניה</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏪</div>
+        <h3>שטחי מסחר</h3>
+        <p>חנויות, קיוסקים, שטחי קמעונאות ומסעדות. אנחנו מבינים מה חשוב לעסק מסחרי – תנועת רגל, חניה ונגישות.</p>
+        <div class="tag-list">
+          <span class="tag">רחוב ראשי</span>
+          <span class="tag">קניון / מרכז מסחרי</span>
+          <span class="tag">מסחר+מגורים</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏭</div>
+        <h3>תעשייה ולוגיסטיקה</h3>
+        <p>מחסנים, מבני תעשייה, שטחי אחסון ומפעלים. גישה מצוינת לצירי הכביש המרכזיים באזור השרון.</p>
+        <div class="tag-list">
+          <span class="tag">מחסנים</span>
+          <span class="tag">מבני תעשייה</span>
+          <span class="tag">שטחים פתוחים</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>נדל"ן למגורים</h3>
+        <p>דירות לקנייה ולהשכרה, בתים פרטיים ויחידות דיור. מלווים אתכם מהחיפוש הראשון ועד לחתימה על החוזה.</p>
+        <div class="tag-list">
+          <span class="tag">יד שנייה</span>
+          <span class="tag">פרויקטים חדשים</span>
+          <span class="tag">השכרה</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>השקעות נדל"ן</h3>
+        <p>ניתוח כדאיות השקעה, איתור נכסים עם פוטנציאל, ניהול תהליך הרכישה. הכסף שלכם צריך לעבוד עבורכם.</p>
+        <div class="tag-list">
+          <span class="tag">תשואה גבוהה</span>
+          <span class="tag">ניתוח שוק</span>
+          <span class="tag">נכסים מניבים</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>ייעוץ והערכת שווי</h3>
+        <p>הערכת שווי מקצועית לנכסים מסחריים ופרטיים, ייעוץ לפני רכישה ומכירה, וניהול משא ומתן מולכם.</p>
+        <div class="tag-list">
+          <span class="tag">ייעוץ חינם</span>
+          <span class="tag">הערכת שווי</span>
+          <span class="tag">ניהול משא ומתן</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ AREAS ═══════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label">אזורי פעילות</div>
+    <h2 class="section-title">מכירים את השטח כמו כף ידנו</h2>
+    <p class="section-desc">שנים של ניסיון בשוק המקומי – אנחנו יודעים אילו רחובות עובדים, מה שוויים האמיתי של הנכסים ואיפה הגמנים.</p>
+
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="city">הרצליה</div>
+        <div class="desc">הרצליה פיתוח, פארקי הייטק, מרכז עסקים מוביל</div>
+      </div>
+      <div class="area-card">
+        <div class="city">כפר סבא</div>
+        <div class="desc">מרכז עיר תוסס, אזורי תעשייה, פיתוח מואץ</div>
+      </div>
+      <div class="area-card">
+        <div class="city">רעננה</div>
+        <div class="desc">עיר יוקרתית, חברות טכנולוגיה, שוק פרטי חזק</div>
+      </div>
+      <div class="area-card">
+        <div class="city">הוד השרון</div>
+        <div class="desc">פרוורי מגורים, שטחי תעשייה, מתפתח בקצב מהיר</div>
+      </div>
+      <div class="area-card">
+        <div class="city">פתח תקוה</div>
+        <div class="desc">מרכז לוגיסטי, מסחרי עשיר, ביקוש גבוה</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ WHY US ═══════════════════════════════ -->
+<section class="why-bg">
+  <div class="container">
+    <div class="section-label">למה אנחנו?</div>
+    <h2 class="section-title">ההבדל שלנו הוא האנשים</h2>
+    <p class="section-desc">תיווך טוב הוא לא רק מציאת נכס – זו הבנה מעמיקה של הצרכים שלכם ולווי אמיתי בכל תהליך.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🎯</span>
+        <h3>התמחות מקומית</h3>
+        <p>אנחנו מכירים כל נכס, כל רחוב וכל עסקה שנסגרה באזור. הידע המקומי שלנו שווה כסף.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⚡</span>
+        <h3>מענה מהיר</h3>
+        <p>חוזרים אליכם תוך שעה בימי עסקים. בשוק נדל"ן – מהירות ב שם משחק.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🔍</span>
+        <h3>גישה לנכסים אקסקלוסיביים</h3>
+        <p>נכסים שלא מפורסמים בפומבי. רשת הקשרים שלנו פותחת דלתות שאחרים לא יכולים.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📋</span>
+        <h3>ליווי מלא</h3>
+        <p>מהחיפוש הראשון ועד מסירת המפתח – אנחנו איתכם בכל שלב, כולל מול עו"ד וחתימה.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💼</span>
+        <h3>ניסיון מסחרי ייחודי</h3>
+        <p>מומחיות בנדל"ן מסחרי לצד הפרטי. מבינים את צרכי העסק שלכם לא רק את הנכס.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🛡️</span>
+        <h3>שקיפות מלאה</h3>
+        <p>אין הפתעות. כל העלויות, כל המידע, כל השיקולים – לפניכם תמיד בבהירות מלאה.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-label">לקוחות מספרים</div>
+    <h2 class="section-title">מה אומרים עלינו</h2>
+    <p class="section-desc">הלקוחות שלנו הם השגרירים הטובים ביותר. הנה מה שחלקם סיפרו לנו.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>חיפשנו משרד בהרצליה פיתוח לחברת הייטק שלנו. ידן הביא לנו אופציות שלא פורסמו בשום מקום, ובתוך שלושה שבועות סגרנו עסקה מצוינת. שירות אישי ומקצועי ברמה אחרת.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ד</div>
+          <div class="reviewer-info">
+            <div class="name">דוד כהן</div>
+            <div class="role">מנכ"ל, חברת טכנולוגיה – הרצליה</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>רכשתי דירה ראשונה בכפר סבא. הייתי לחוצה ולא ידעתי מה לבדוק. ידן ליווה אותי בכל שלב, הסביר הכל בסבלנות, ומצא לי דירה מדויקת לתקציב שלי. ממליצה בחום!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">מ</div>
+          <div class="reviewer-info">
+            <div class="name">מיכל לוי</div>
+            <div class="role">רוכשת דירה ראשונה – כפר סבא</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>ביקשנו מחסן לוגיסטי בהוד השרון. ידן הבין בדיוק מה אנחנו צריכים מבחינה תפעולית – גישת משאיות, חשמל תלת-פאזי ועוד. מצא לנו בדיוק את מה שחיפשנו.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ר</div>
+          <div class="reviewer-info">
+            <div class="name">רונן אברהם</div>
+            <div class="role">בעלים, חברת הפצה – הוד השרון</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SECOND CTA ═══════════════════════════════ -->
+<div class="cta-section">
+  <h2>מוכנים להתחיל לחפש?</h2>
+  <p>ייעוץ ראשוני חינם ללא התחייבות. נשמח לשמוע מה אתם מחפשים ולעזור לכם למצוא את הנכס הנכון.</p>
+  <div class="cta-buttons">
+    <a href="#lead-form" class="btn-gold">📋 השאירו פרטים</a>
+    <a href="tel:05X-XXXXXXX" class="btn-outline">📞 התקשרו עכשיו</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo">ידן <span>נדל"ן</span></span>
+      <p>מתווך נדל"ן מוסמך, מומחה לשוק המסחרי והפרטי באזור השרון. רישיון תיווך מס' [XXXX]. שירות אישי, מהיר ואמין.</p>
+    </div>
+    <div class="footer-col">
+      <h4>שירותים</h4>
+      <a href="#">משרדים להשכרה</a>
+      <a href="#">שטחי מסחר</a>
+      <a href="#">נדל"ן מגורים</a>
+      <a href="#">השקעות</a>
+      <a href="#">ייעוץ</a>
+    </div>
+    <div class="footer-col">
+      <h4>צרו קשר</h4>
+      <a href="tel:05XXXXXXXX">📞 05X-XXXXXXX</a>
+      <a href="mailto:idan@example.com">✉️ idan@example.com</a>
+      <a href="https://wa.me/972XXXXXXXXX">💬 WhatsApp</a>
+      <a href="#">📍 הרצליה, ישראל</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ידן נדל"ן. כל הזכויות שמורות.</span>
+    <div style="display:flex;gap:20px;">
+      <a href="#">מדיניות פרטיות</a>
+      <a href="#">תנאי שימוש</a>
+      <a href="#">נגישות</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════ WHATSAPP FLOAT ═══════════════════════════════ -->
+<a href="https://wa.me/972XXXXXXXXX?text=שלום%2C%20אני%20מעוניין%20לשמוע%20על%20נכסים%20באזור%20השרון"
+   class="wa-float" target="_blank" rel="noopener" title="שלחו הודעה בוואטסאפ">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('heroForm');
+    const thanks = document.getElementById('thank-you');
+    form.style.display = 'none';
+    thanks.style.display = 'block';
+
+    // In production: send to your CRM / email / WhatsApp API
+    // Example (replace with your endpoint):
+    // fetch('/api/leads', { method:'POST', body: JSON.stringify({...}) });
+  }
+
+  // Smooth scroll for hash links
+  document.querySelectorAll('a[href="#lead-form"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>
+</body>
+</html>
